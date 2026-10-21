@@ -1,0 +1,247 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f6fc;
+    color: #203047;
+}
+
+header {
+    background: linear-gradient(120deg, #145da0, #168aad);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    margin: 0 0 10px;
+}
+
+header p {
+    margin: 0;
+}
+
+main {
+    max-width: 1150px;
+    margin: 25px auto;
+    padding: 0 20px;
+}
+
+.placar {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 18px;
+    margin-bottom: 22px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #0000000d;
+}
+
+.placar div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.placar span {
+    color: #65758b;
+    font-size: 13px;
+}
+
+.placar strong {
+    font-size: 25px;
+}
+
+button {
+    padding: 11px 16px;
+    border: none;
+    border-radius: 7px;
+    background: #1769aa;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #104d80;
+}
+
+#restartButton {
+    margin-left: auto;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: 0.8fr 1.7fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.painel-paises,
+.painel-continentes {
+    padding: 18px;
+    background: white;
+    border: 1px solid #dce5ef;
+    border-radius: 12px;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.painel-paises p {
+    color: #65758b;
+    font-size: 13px;
+}
+
+.countries-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 200px;
+}
+
+.pais {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px;
+    background: #f7faff;
+    border: 1px solid #d4e1ed;
+    border-radius: 8px;
+    cursor: grab;
+    font-weight: bold;
+}
+
+.pais:active {
+    cursor: grabbing;
+}
+
+.pais.arrastando {
+    opacity: 0.4;
+}
+
+.pais.correto {
+    background: #e5f7eb;
+    border-color: #a5d9b5;
+    cursor: default;
+}
+
+.bandeira {
+    font-size: 22px;
+}
+
+.continentes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.continente {
+    min-height: 180px;
+    padding: 14px;
+    background: #f7faff;
+    border: 2px dashed #c6d6e5;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.continente:last-child {
+    grid-column: 1 / -1;
+}
+
+.continente h3 {
+    margin: 0 0 15px;
+    font-size: 17px;
+}
+
+.continente.destino {
+    background: #dff1ff;
+    border-color: #1769aa;
+}
+
+.continente.acertado {
+    border-style: solid;
+    border-color: #9ed5af;
+}
+
+.dropped-countries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.dropped-countries .pais {
+    padding: 7px 9px;
+    font-size: 12px;
+    cursor: default;
+}
+
+.dropped-countries .bandeira {
+    font-size: 16px;
+}
+
+.mensagem {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e3f2fd;
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+.mensagem.erro {
+    background: #ffebee;
+    color: #b71c1c;
+}
+
+.mensagem.sucesso {
+    background: #e8f5e9;
+    color: #1b5e20;
+}
+
+.resultado {
+    margin-top: 20px;
+    padding: 25px;
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+}
+
+.resultado[hidden] {
+    display: none;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    color: #65758b;
+}
+
+@media (max-width: 760px) {
+    .game {
+        grid-template-columns: 1fr;
+    }
+
+    .continentes {
+        grid-template-columns: 1fr;
+    }
+
+    .continente:last-child {
+        grid-column: auto;
+    }
+
+    .placar {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    #restartButton {
+        margin-left: 0;
+    }
+}

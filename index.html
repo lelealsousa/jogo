@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio dos Continentes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>🌎 Desafio dos Continentes</h1>
+        <p>Arraste cada país para o continente correto!</p>
+    </header>
+
+    <main>
+        <section class="placar">
+            <div>
+                <span>Pontuação</span>
+                <strong id="score">0</strong>
+            </div>
+
+            <div>
+                <span>Acertos</span>
+                <strong id="progress">0/10</strong>
+            </div>
+
+            <button id="restartButton">Reiniciar jogo</button>
+        </section>
+
+        <section class="game">
+            <div class="painel-paises">
+                <h2>Países disponíveis</h2>
+                <p>Arraste os cartões para os continentes.</p>
+
+                <div id="countries" class="countries-list"></div>
+            </div>
+
+            <div class="painel-continentes">
+                <h2>Continentes</h2>
+
+                <div class="continentes">
+
+                    <div class="continente" data-continent="América">
+                        <h3>🌎 América</h3>
+                        <div class="dropped-countries"></div>
+                    </div>
+
+                    <div class="continente" data-continent="Europa">
+                        <h3>🏰 Europa</h3>
+                        <div class="dropped-countries"></div>
+                    </div>
+
+                    <div class="continente" data-continent="África">
+                        <h3>🦁 África</h3>
+                        <div class="dropped-countries"></div>
+                    </div>
+
+                    <div class="continente" data-continent="Ásia">
+                        <h3>🏯 Ásia</h3>
+                        <div class="dropped-countries"></div>
+                    </div>
+
+                    <div class="continente" data-continent="Oceania">
+                        <h3>🦘 Oceania</h3>
+                        <div class="dropped-countries"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <p id="message" class="mensagem">
+            💡 Comece arrastando um país para seu continente!
+        </p>
+
+        <section id="result" class="resultado" hidden>
+            <h2>🏆 Parabéns!</h2>
+            <p>Você terminou o desafio!</p>
+            <p id="finalScore"></p>
+            <button id="playAgainButton">Jogar novamente</button>
+        </section>
+    </main>
+
+    <footer>
+        Mini-game educativo de Geografia
+    </footer>
+
+</body>
+</html>
